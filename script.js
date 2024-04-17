@@ -1,8 +1,15 @@
-// File hosted on https://cdn.jsdelivr.net/your-external-script.js
-(function() {
-    var xhr = new XMLHttpRequest();
-    var token = 'test';
-    xhr.open('GET', 'https://eo701wwoc4t6b3g.m.pipedream.net/capture?token=test', true);
-    xhr.send();
-  })();
+const headers = new Headers()
+headers.append("Content-Type", "application/json")
 
+const body = {
+  "test": "event"
+}
+
+const options = {
+  method: "POST",
+  headers,
+  mode: "cors",
+  body: JSON.stringify(body),
+}
+
+fetch("https://eo701wwoc4t6b3g.m.pipedream.net", options)
